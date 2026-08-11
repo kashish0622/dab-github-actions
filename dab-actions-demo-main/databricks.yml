@@ -1,0 +1,22 @@
+bundle:
+  name: dab-gitactions-demo
+
+include:
+  - resources/*.yml
+  - resources/*/*.yml
+
+targets:
+
+  dev:
+    mode: development
+    default: true
+
+    workspace:
+      host: https://adb-7405606250328066.6.azuredatabricks.net
+
+  prod:
+    mode: production
+
+    workspace:
+      host: https://adb-7405606546085670.10.azuredatabricks.net
+      root_path: /Workspace/Production/.bundle/${bundle.name}
